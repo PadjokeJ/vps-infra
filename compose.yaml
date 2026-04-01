@@ -1,0 +1,27 @@
+include:
+  - PYE/compose.yaml
+
+services:
+  rythmo:
+    build: ./pyrythmo
+    hostname: rythmo
+    ports:
+      - "8080:8080"
+    volumes:
+      - rythmo_stats:/app/stats
+  
+  caddy:
+    image: caddy:2.11.2-alpine
+    hostname: caddy
+    restart: unless-stopped
+    ports:
+      - "443:443"
+      - "443:443/udp"
+      - "80:80"
+    volumes:
+      - $PWD/caddy:/etc/caddy
+      - caddy_data:/data
+
+volumes:
+  caddy_data:
+  rythmo_stats:

@@ -1,0 +1,15 @@
+https://rythmo.padjokej.dev {
+	reverse_proxy /* http://rythmo:8080 {
+		header_up Host {host}
+		transport http {
+			read_timeout 120s
+			write_timeout 120s
+		}
+	}
+}
+
+https://pye.padjokej.dev {
+	reverse_proxy /* http://pye:5000 {
+		header_up Host {host}
+	}
+}
