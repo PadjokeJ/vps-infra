@@ -2,6 +2,14 @@ include:
   - PYE/compose.yaml
 
 services:
+  website:
+    image: httpd:2.4
+    hostname: website
+    ports:
+      - 8001:80
+    volumes:
+      - $PWD/website/:/usr/local/apache2/htdocs/
+
   rythmo:
     build: ./pyrythmo
     hostname: rythmo

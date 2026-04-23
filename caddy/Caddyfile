@@ -13,3 +13,10 @@ https://pye.padjokej.dev {
 		header_up Host {host}
 	}
 }
+
+padjokej.dev {
+  @curl {
+    header_regexp curl User-Agent curl.*
+  }
+  reverse_proxy /* http://website:8001
+}
