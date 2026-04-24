@@ -17,6 +17,18 @@ https://pye.padjokej.dev {
 padjokej.dev {
   @curl {
     header_regexp curl User-Agent curl.*
+    path /*
   }
-  reverse_proxy /* http://website:8001
+  reverse_proxy @curl http://curlsite:8002
+  reverse_proxy /* http://website:80
 }
+
+padjokej.dev:80 {
+  @curl {
+    header_regexp curl User-Agent curl.*
+    path /*
+  }
+  reverse_proxy @curl http://curlsite:8002
+  reverse_proxy /* http://website:80
+}
+

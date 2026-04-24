@@ -9,6 +9,11 @@ services:
       - 8001:80
     volumes:
       - $PWD/website/:/usr/local/apache2/htdocs/
+  curlsite:
+    build: ./curl-padjokej.dev
+    hostname: curlsite
+    ports:
+      - 8002:8002
 
   rythmo:
     build: ./pyrythmo
