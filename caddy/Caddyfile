@@ -20,7 +20,12 @@ padjokej.dev {
     path /*
   }
   reverse_proxy @curl http://curlsite:8002
-  reverse_proxy /* https://website:443
+
+  root /srv
+  file_server {
+    hide .git
+    hide .github
+  }
 }
 
 padjokej.dev:80 {
@@ -29,6 +34,11 @@ padjokej.dev:80 {
     path /*
   }
   reverse_proxy @curl http://curlsite:8002
-  reverse_proxy /* https://website:443
+
+  root /srv
+  file_server {
+    hide .git
+    hide .github
+  }
 }
 

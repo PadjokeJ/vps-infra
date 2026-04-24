@@ -2,16 +2,6 @@ include:
   - PYE/compose.yaml
 
 services:
-  website:
-    image: caddy:2.11.2-alpine
-    hostname: website
-    ports:
-      - 8001:80
-      - 8003:443
-    volumes:
-      - $PWD/website/:/srv
-      - $PWD/website/Caddyfile:/etc/caddy/Caddyfile
-
   curlsite:
     build: ./curl-padjokej.dev
     hostname: curlsite
@@ -37,6 +27,7 @@ services:
     volumes:
       - $PWD/caddy:/etc/caddy
       - caddy_data:/data
+      - $PWD/website/:/srv
 
 volumes:
   caddy_data:
