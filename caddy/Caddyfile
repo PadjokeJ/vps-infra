@@ -21,6 +21,12 @@ padjokej.dev {
   }
   reverse_proxy @curl http://curlsite:8002
 
+  handle_errors {
+    rewrite /{err.status_code}.html
+    file_server
+  }
+
+
   root /srv
   file_server {
     hide .git
@@ -34,11 +40,5 @@ padjokej.dev:80 {
     path /*
   }
   reverse_proxy @curl http://curlsite:8002
-
-  root /srv
-  file_server {
-    hide .git
-    hide .github
-  }
 }
 
