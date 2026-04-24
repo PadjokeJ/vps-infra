@@ -3,12 +3,14 @@ include:
 
 services:
   website:
-    image: httpd:2.4
+    image: caddy:2.11.2-alpine
     hostname: website
     ports:
       - 8001:80
+      - 8003:443
     volumes:
-      - $PWD/website/:/usr/local/apache2/htdocs/
+      - $PWD/website/:/srv
+
   curlsite:
     build: ./curl-padjokej.dev
     hostname: curlsite
