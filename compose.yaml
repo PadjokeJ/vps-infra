@@ -27,7 +27,15 @@ services:
     volumes:
       - $PWD/caddy:/etc/caddy
       - caddy_data:/data
+
+  website:
+    image: caddy:2.11.2-alpine
+    hostname: website
+    ports:
+      - 8001:80
+    volumes:
       - $PWD/website/:/srv
+      - $PWD/caddy:/etc/caddy
 
 volumes:
   caddy_data:
