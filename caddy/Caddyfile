@@ -14,7 +14,7 @@ https://pye.padjokej.dev {
 	}
 }
 
-padjokej.dev {
+padjokej.dev, jpfister.ch {
   @curl {
     header_regexp curl User-Agent curl.*
     path /*
@@ -23,7 +23,7 @@ padjokej.dev {
   reverse_proxy http://website:80
 }
 
-padjokej.dev:80 {
+padjokej.dev:80, jpfister.ch:80 {
   @curl {
     header_regexp curl User-Agent curl.*
     path /*
