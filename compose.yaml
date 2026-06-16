@@ -41,6 +41,8 @@ services:
     build: ./roboDetekMouche
     hostname: robotkidetek
     restart: unless-stopped
+    environment:
+      TELOXIDE_TOKEN: ${TELOXIDE_TOKEN}
 
 volumes:
   caddy_data:
