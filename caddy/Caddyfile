@@ -11,8 +11,12 @@ https://rythmo.padjokej.dev {
 https://epfl.cc {
   root /srv
   file_server {
-
-    }
+  
+  }
+  handle_errors {
+    rewrite /index.html
+    file_server
+  }
 }
 
 padjokej.dev, jpfister.ch {
