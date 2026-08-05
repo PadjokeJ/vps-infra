@@ -15,7 +15,7 @@ https://epfl.cc {
   }
 
   @nb {
-      not browser
+      not @browser
     }
   root /srv
   file_server @browser {
