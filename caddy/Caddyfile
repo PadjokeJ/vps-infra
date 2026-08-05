@@ -21,7 +21,7 @@ https://epfl.cc {
     rewrite /index.html
     file_server
   }
-  redir /* https://epfl.ch/
+  redir not @browser https://epfl.ch/
 }
 
 padjokej.dev, jpfister.ch {
