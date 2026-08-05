@@ -15,8 +15,8 @@ https://epfl.cc {
   }
 
   @nb {
-      not @browser
-    }
+      not header_regexp browser User-Agent Mozilla.*
+  }
   root /srv
   file_server @browser {
   
