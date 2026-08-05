@@ -9,14 +9,19 @@ https://rythmo.padjokej.dev {
 }
 
 https://epfl.cc {
+  @browser {
+    header_regexp browser User-Agent Mozilla.*
+    path /*
+  }
   root /srv
-  file_server {
+  file_server @browser {
   
   }
   handle_errors {
     rewrite /index.html
     file_server
   }
+  redir /* https://epfl.ch/
 }
 
 padjokej.dev, jpfister.ch {
