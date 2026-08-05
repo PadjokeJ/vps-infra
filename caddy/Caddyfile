@@ -8,10 +8,11 @@ https://rythmo.padjokej.dev {
 	}
 }
 
-https://pye.padjokej.dev {
-	reverse_proxy /* http://pye:5000 {
-		header_up Host {host}
-	}
+https://epfl.cc {
+  root /srv
+  file_server {
+
+    }
 }
 
 padjokej.dev, jpfister.ch {
