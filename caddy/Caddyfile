@@ -13,6 +13,10 @@ https://epfl.cc {
     header_regexp browser User-Agent Mozilla.*
     path /*
   }
+
+  @nb {
+      not browser
+    }
   root /srv
   file_server @browser {
   
@@ -21,7 +25,7 @@ https://epfl.cc {
     rewrite /index.html
     file_server
   }
-  redir not @browser https://epfl.ch/
+  redir @nb https://epfl.ch/
 }
 
 padjokej.dev, jpfister.ch {
