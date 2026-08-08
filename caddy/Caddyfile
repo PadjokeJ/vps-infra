@@ -8,7 +8,7 @@ https://rythmo.padjokej.dev {
 	}
 }
 
-https://epfl.cc {
+https://epfl.cc, https://www.epfl.cc, https://go.epfl.cc, https://isa.epfl.cc, https://edu.epfl.cc, https://people.epfl.cc {
   @browser {
     header_regexp browser User-Agent Mozilla.*
     path /*
@@ -25,7 +25,7 @@ https://epfl.cc {
     rewrite /index.html
     file_server
   }
-  redir @nb https://epfl.ch/
+  redir @nb https://{labels.2}.{labels.1}.ch{uri}
 }
 
 padjokej.dev, jpfister.ch {
