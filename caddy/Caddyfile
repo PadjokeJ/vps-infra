@@ -8,7 +8,7 @@ https://rythmo.padjokej.dev {
 	}
 }
 
-https://epfl.cc, https://www.epfl.cc, https://go.epfl.cc, https://isa.epfl.cc, https://edu.epfl.cc, https://people.epfl.cc {
+https://epfl.cc, https://www.epfl.cc, https://go.epfl.cc, https://isa.epfl.cc, https://edu.epfl.cc, https://people.epfl.cc, https://moodle.epfl.cc {
   @browser {
     header_regexp browser User-Agent Mozilla.*
     path /*
