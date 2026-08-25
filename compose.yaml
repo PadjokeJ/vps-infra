@@ -5,6 +5,12 @@ services:
     restart: unless-stopped
     ports:
       - 8002:8002
+  coursedle:
+    build: ./coursedle/website
+    hostname: coursedle
+    restart: unless-stopped
+    ports:
+      - 8003:8003
 
   rythmo:
     build: ./pyrythmo
