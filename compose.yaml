@@ -50,6 +50,25 @@ services:
     restart: unless-stopped
     environment:
       TELOXIDE_TOKEN: ${TELOXIDE_TOKEN}
+  wireguard:
+    image: lscr.io/linuxserver/wireguard:latest
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+      - SERVERPORT=42295 #optional
+    volumes:
+      - /etc/wireguard/:/config
+      - /lib/modules:/lib/modules #optional
+    ports:
+      - 42295:42295/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped
 
 volumes:
   caddy_data:
