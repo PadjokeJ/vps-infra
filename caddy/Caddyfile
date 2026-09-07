@@ -18,8 +18,9 @@ https://epfl.cc, https://www.epfl.cc, https://go.epfl.cc, https://isa.epfl.cc, h
       not header_regexp browser User-Agent Mozilla.*
   }
   root /srv
-  file_server @browser {
-  
+  handle @browser {
+    rewrite index.html
+    file_server
   }
   handle_errors {
     rewrite /index.html
