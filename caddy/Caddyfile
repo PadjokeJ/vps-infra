@@ -29,6 +29,10 @@ https://epfl.cc, https://www.epfl.cc, https://go.epfl.cc, https://isa.epfl.cc, h
   redir @nb https://{labels.2}.{labels.1}.ch{uri}
 }
 
+notes.epfl.cc {
+  redir https://notes.padjokej.dev{uri}
+}
+
 https://coursedle.epfl.cc {
   reverse_proxy http://coursedle:8003
 }
