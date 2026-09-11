@@ -62,7 +62,7 @@ services:
       - TZ=Europe/Zurich
       - SERVERPORT=42295 #optional
     volumes:
-      - /etc/wireguard/:/config
+      - /etc/wireguard/config/:/config
       - /lib/modules:/lib/modules #optional
     ports:
       - 42295:42295/udp
