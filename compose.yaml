@@ -69,6 +69,14 @@ services:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
+  mate_bot:
+    image: ghcr.io/PadjokeJ/mate_bot:master
+    container_name: mate_bot
+    environment:
+      - DATABASE_URL: /app/mate_bot
+      - TELOXIDE_TOKEN: ${MATE_TOKEN}
+    volumes:
+      - $PWD/mate_bot/mate_bot:/app/mate_bot
 
 volumes:
   caddy_data:
