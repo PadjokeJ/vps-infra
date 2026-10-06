@@ -58,6 +58,10 @@ padjokej.dev, jpfister.ch {
   reverse_proxy @curl http://curlsite:8002
 
   handle_path /proxy* {
+    header {
+      User-Agent jpfister_proxy
+    }
+
     handle_path /lulu* {
       uri replace /badge.gif /data/badge.gif
       reverse_proxy /* https://lumycea.ch
