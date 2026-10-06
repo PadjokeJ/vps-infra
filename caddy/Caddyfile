@@ -56,6 +56,23 @@ padjokej.dev, jpfister.ch {
     path /*
   }
   reverse_proxy @curl http://curlsite:8002
+
+  handle_path /proxy* {
+    handle_path /lulu* {
+      uri replace /badge.gif /data/badge.gif
+      reverse_proxy /* https://lumycea.ch
+    }
+    handle_path /zuul* {
+      reverse_proxy /* https://boyskiss.ing
+    }
+    handle_path /zoee* {
+      reverse_proxy /* https://bytewit.ch
+    }
+    handle_path /alyx* {
+      reverse_proxy /* https://www.hackfight.dev
+    }
+  }
+
   reverse_proxy http://website:80
 }
 
